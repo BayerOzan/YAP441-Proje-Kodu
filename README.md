@@ -1,10 +1,10 @@
 # YAP441-Projesi (2025)
 ## İçerikler
-Bu okuma yazısında Yap441 dersi içerisinde oluşturulmuş olan proje hakkında bilgiler verilmiştir.
+Bu okuma yazısında YAP441 dersi içerisinde oluşturulmuş olan proje hakkında bilgiler verilmiştir.
 
 Proje içerisinde incelenen problem, problem için düşünülen çözüm, bu çözüm için oluşturulan yöntemler ve bu yöntemlerin kodları hakkında bilgiler verilmiştir.
 
-## Seçilen Problem
+## Proje Problemi
 YAP441 Projesi üzerinde birçok yapay zeka projesi mevcuttur.
 Bu projeler içerisinden Yılan Oyunu Yapay Zeka Aracı Projesi seçilmiştir.
 Bu problem içerisinde popüler bir oyun olan Yılan oyunu üzerinde bir yapay zeka aracısı oluşturup oyun içerisindeki maksimum skorun elde edilmesi sağlanmalıdır.
@@ -71,5 +71,5 @@ Kazanılmayan oyunlar, meyvenin rastgere hareketlerinden veya hücre kısıtlama
 
 Kuyruk kovalama fonksiyonu artık A* algoritmasını çağırmamaktadır. Bu algoritma çağırıldığında bir hamiltonian döngüsüne benzer bir algoritma çağırılmaktadır. (yön öncelikleri: olarak sol -> aşağı -> yukarı -> sağ)
 
-YAP441 Dersinin projesi için gerekli olan kod mevcuttur.
-YAP441 Proje sunum videosunda verildiği gibi yöntemler 3 ayrı kod üzerinde yapılmıştır
+### Kodlar
+Yazılmış olan bütün yöntemlerin kodları Bu sayfada mevcuttur.
