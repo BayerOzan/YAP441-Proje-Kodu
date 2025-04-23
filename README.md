@@ -47,9 +47,9 @@ Proje sonrası üretilen en son ve en gelişmiş yöntemdir
 
 Bu yöntemde yılanın A* algoritması bir hareket yönü vermek yerine bir hareket yolu vermektedir. Hareket yolu alındıktan sonra, A* algoritması yol gidilene kadar tekrar çağırılmamaktadır.
 
-A* algoritmasında döngü gerçekleştirilmemesi için 
+A* algoritmasında döngü gerçekleştirilmemesi için kuyruk kovalama algoritması gümcellenmiştir.
 
-Bu yöntem oyunun bitimine kadar ilerleyebildiği için, oyunun bitiş koşulu eklenmiştir. Bitiş koşulu meyveyede yeniden düzenlenen hareket fonksiyonunun içindedir.
+Bu yöntem oyunun bitimine erişebildiği için, oyunun bitiş koşulu eklenmiştir. Bitiş koşulu meyveyede yeniden düzenlenen hareket fonksiyonunun içindedir.
 
 Güncellenen meyve fonksiyonunda çeşitli özellikler eklenmiştir:
 
