@@ -69,7 +69,8 @@ Yapılan değişiklikler sayesinde oyunun hızı artırılmıştır. Oyun skorun
 
 Kazanılmayan oyunlar, meyvenin rastgere hareketlerinden veya hücre kısıtlamasından kaynaklanmaktadır. Kayıp edildiğinde bile yılan yüksek bir skor elde edebilmektedir.
 
-Kuyruk kovalama fonksiyonu artık A* algoritmasını çağırmamaktadır. Bu algoritma çağırıldığında bir hamiltonian döngüsüne benzer bir algoritma çağırılmaktadır. (yön öncelikleri: olarak sol -> aşağı -> yukarı -> sağ)
+Kuyruk kovalama fonksiyonu artık A* algoritmasını çağırmamaktadır. 
+Yeni kuyruk kovalama çağırıldığında bir hamiltonian döngüsüne benzer bir algoritma çağırılmaktadır. 
+Algoritma, belirli bir önceliğe göre gidilecek bir yön seçmektedir ve bu yönün erişilebilirliğini kontrol etmektedir. 
+Erişim sağlanabiliyorsa bu yöne ilerlemektedir, yoksa geri kalan yönlere bakmaktadır.(yön öncelikleri: olarak sol -> aşağı -> yukarı -> sağ)
 
-### Kodlar
-Yazılmış olan bütün yöntemlerin kodları Bu sayfada mevcuttur.
