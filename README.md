@@ -6,23 +6,23 @@ Proje içerisinde incelenen problem, problem için düşünülen çözüm, bu ç
 
 ## Proje Problemi
 YAP441 Projesi üzerinde birçok yapay zeka projesi mevcuttur.
+
 Bu projeler içerisinden Yılan Oyunu Yapay Zeka Aracı Projesi seçilmiştir.
-Bu problem içerisinde popüler bir oyun olan Yılan oyunu üzerinde bir yapay zeka aracısı oluşturup oyun içerisindeki maksimum skorun elde edilmesi sağlanmalıdır.
-Problemin çözülebilmesi için birçok yöntem üretilmiştir.
 
 ## Üretilen Çözümler
-Oyun pygame üzerinden üretilmiştir. Oyun üzerinde meyve, yılan ve oyun arayüzü tasarımı bulunmaktadır
-Çözümler A* algoritması sonucu yapılmıştır
+Oyun pygame üzerinden üretilmiştir. Oyun üzerinde meyve, yılan ve oyun arayüzü tasarımı pygame kütüphanesi üzerinden yapılandırılmıştır.
+Çözümlerin içerisinde A* algoritması, kuyruk kovalama algoritması, hamiltonian döngüsü gibi algoritmalar bulunmaktadır.
+
 ### Yöntem 1
-İlk yöntem en basit mantıkla yapılmıştır.
-İlk yöntemde A* algoritması sade bir biçimde üretilmiştir.
-A* algoritmasının yalnız kullanılması algoritmanın en hızlı çalışmasını sağlamıştır. 
-A* algoritması Yılan ile meyve arasındaki en kısa mesafeyi bulmada kullanılmıştır.
-Bu yöntemdeki en büyük sorun, Meyve ile yılan arasındaki yol kapatıldığında algoritmanın çalışmamasıdır.
-Algoritma çalışmadığında büyük ihtimalle oyun bitecektir.
+Bu yöntem sadece A* algoritması kullanılarak üretilmiştir.
+Aracının kontrol etmesi gereken başka durumlar olmadığı için en hızlı çalışan yöntemdir.
+
+A* algoritması ancak Yılan ile meyve arasında kesin bir yol bulunmadığında sonuç çıkarmamaktadır ve aracının yönü değiştirilmemektedir, bu da genellikle aracın bir duvara çarpmasına sebep olmaktadır
+
+Yöntemler arasındaki en düşük oyun skoruna sahiptir.
 
 ### Yöntem 2
-A* algoritmasının yanında bir kuyruk kovalama algoritması üretilmiştir.
+A* algoritmasının çalışabileceğini kontrol eden bir kuyruk erişim algoritması ve çalışamadığı durumlar için bir kuyruk kovalama algoritması eklenmiştir.
 
 Bu kuyruk kovalama algoritması A* algoritmasının çalışmadığı durumlarda aktifleşmektedir.
 kuyruk kovalama algoritması, basitçe Yılanın kuyruğu için bir A* algoritması gerçekleştirmektedir.
@@ -34,6 +34,8 @@ Bu algoritmanın içinde yılanın bedeni yol üzerinden simüle edilir. Simüle
 
 Algoritma kontrolü hücre hücre gittiğinden ve doğrulama kodunun uzunluğundan Algoritma üzerinde büyük bir yavaşlama gözlemlenmektedir.
 ### Yöntem 3
+Yeni algoritmalar eklenmemiştir. Yöntem 2 de bulunan algoritmalarda güncellemeler yapılmıştır. Yapılan güncellemeler sonucu oyun kodu skor açısından küçük bir kayıp vererek hızını büyük bir miktarda arttırmıştır.
+
 Bu yöntem için 2. yöntemde oluşturulan algoritmanın daha hızlı çalışmasını sağlamaktı. Bunu gerçekleştirirken algoritma içerisinde skor açısından kayıplar gerçekleştirilmiştir. 
 Ancak bu kayıplar elde edilen hız kazancına karşın daha düşüktür
 
@@ -42,6 +44,7 @@ A* algoritması içerisinde sadece tek bir seferlik kuyruk kovalama doğrulamas�
 Ayrıca oluşabilecek sonsuz döngüler de azaltılmıştır. Bu durumlarda ancak yılanın hareketlerini tahmin etmek oldukça zordur.
 
 ### Yöntem 4
+Bulunan yöntemler üzerinde büyük değişiklikler yapılmıştır. Bu değişiklikler sonucu Aracının hızı ve kazandığı skoru en yüksek seviyesine çıkartılmıştır.
 
 Proje sonrası üretilen en son ve en gelişmiş yöntemdir
 
