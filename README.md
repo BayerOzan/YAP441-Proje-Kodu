@@ -33,6 +33,12 @@ A* algoritmasının çalışabileceğini kontrol eden bir kuyruk erişim fonksiy
 Bu algoritmanın içinde yılanın bedeni yol üzerinden simüle edilir. Simüle yılanın kuyruğuna ulaşmımı BFS algoritması ile kontrol edilir.
 
 Algoritma kontrolü hücre hücre gittiğinden ve doğrulama kodunun uzunluğundan Algoritma üzerinde büyük bir yavaşlama gözlemlenmektedir.
+
+Ayrıca oyunun hızının değiştirilebilmesi ve oyunun durdurulabilmesi için yeni tuşlar eklenmiştir.
+
+Yukarı ya da aşağı oklarına basılarak oyun hızlandırılabilir ve yavaşlatılabilmektedir.
+
+Boşluk tuşuna basılarak oyun durdurulabilmektedir. Oyun durdurulduğunda ekranda en son çalışan A* algoritmasının oluşturduğu ağırlık haritası gösterilmektedir. Bütün ağırlıklar yazılmadan yeni bir komut alınamamaktadır. Tekrar boşluk tuşuna basıldığında oyun devam etmektedir.
 ### Yöntem 3
 Yeni algoritmalar eklenmemiştir. Yöntem 2 de bulunan algoritmalarda güncellemeler yapılmıştır. Yapılan güncellemeler sonucu oyun kodu skor açısından küçük bir kayıp vererek hızını büyük bir miktarda arttırmıştır.
 
@@ -46,34 +52,21 @@ Ayrıca oluşabilecek sonsuz döngüler de azaltılmıştır. Bu durumlarda anca
 ### Yöntem 4
 Bulunan yöntemler üzerinde büyük değişiklikler yapılmıştır. Bu değişiklikler sonucu Aracının hızı ve kazandığı skoru en yüksek seviyesine çıkartılmıştır.
 
-Proje sonrası üretilen en son ve en gelişmiş yöntemdir
+Proje sonrası üretilen en son ve en gelişmiş yöntemdir. Bu yöntemde yılanın A* algoritması bir hareket yönü vermek yerine bir meyveye doğru bir hareket yolu vermektedir. Hareket yolu alındıktan sonra, A* algoritması yol gidilene kadar tekrar çağırılmamaktadır ve hesaplamadan kazanç sağlanmaktadır.
 
-Bu yöntemde yılanın A* algoritması bir hareket yönü vermek yerine bir hareket yolu vermektedir. Hareket yolu alındıktan sonra, A* algoritması yol gidilene kadar tekrar çağırılmamaktadır.
+A* algoritmasında döngü gerçekleştirilmemesi için kuyruk kovalama algoritması güncellenmiştir.
 
-A* algoritmasında döngü gerçekleştirilmemesi için kuyruk kovalama algoritması gümcellenmiştir.
+Oyunun bitiş koşulu eklenmiştir. Bitiş koşulu meyveye hareket fonksiyonunun içerisinde gerçekleştirilmektedir.
 
-Bu yöntem oyunun bitimine erişebildiği için, oyunun bitiş koşulu eklenmiştir. Bitiş koşulu meyveyede yeniden düzenlenen hareket fonksiyonunun içindedir.
-
-Güncellenen meyve fonksiyonunda çeşitli özellikler eklenmiştir:
-
-1- Eski fonksiyonu kaldırılmıştır.
-
-2- Engeli bulunan bütün hücreleri giriş olarak almaktadır.
-
-3- Oyun haritasının haritasını çıkarmaktadır.
-
-4- Oyun haritasında bulunan bütün engelli hücreleri çıkardıktan sonra bir set elde edilmektedir.
-
-5- Bu setten rastgere bir hücre seçilip bu hücre meyvenin gideceği konumu belirlemektedir.
-
-6- Eğer seçilebilecek herhangi bir hücre yok ise oyun bitmiş olarak kabul edilir çünkü meyvenin gidebileceği başka bir hücre yoktur.
+Güncellenen meyve fonksiyonunda eski fonksiyon kaldırılmıştır. 
+Engeli bulunan bütün hücreleri giriş olarak almaktadır. Fonksiyon artık oyun haritasını çıkarmaktadır. 
+Oyun haritasında bulunan bütün dolu hücreleri çıkardıktan sonra bir set elde edilmektedir. 
+Bu setten rastgere bir hücre seçilip bu hücre meyvenin gideceği konumu belirlemektedir. 
+Eğer seçilebilecek herhangi bir hücre yok ise oyun bitmiş olarak kabul edilir çünkü meyvenin gidebileceği başka bir hücre yoktur.
 
 Yapılan değişiklikler sayesinde oyunun hızı artırılmıştır. Oyun skorunda yüksek bir artış gözlemlenmektedir ve oyunların büyük bir kısmı artık bir kazanç ile bitmektedir.
 
-Kazanılmayan oyunlar, meyvenin rastgere hareketlerinden veya hücre kısıtlamasından kaynaklanmaktadır. Kayıp edildiğinde bile yılan yüksek bir skor elde edebilmektedir.
-
 Kuyruk kovalama fonksiyonu artık A* algoritmasını çağırmamaktadır. 
-Yeni kuyruk kovalama çağırıldığında bir hamiltonian döngüsüne benzer bir algoritma çağırılmaktadır. 
-Algoritma, belirli bir önceliğe göre gidilecek bir yön seçmektedir ve bu yönün erişilebilirliğini kontrol etmektedir. 
+Yeni kuyruk kovalama algoritması, belirli bir önceliğe göre gidilecek bir yön seçmektedir ve bu yönün erişilebilirliğini kontrol etmektedir. 
 Erişim sağlanabiliyorsa bu yöne ilerlemektedir, yoksa geri kalan yönlere bakmaktadır.(yön öncelikleri: olarak sol -> aşağı -> yukarı -> sağ)
 
